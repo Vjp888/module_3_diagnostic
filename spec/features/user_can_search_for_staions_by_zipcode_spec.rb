@@ -11,5 +11,17 @@ RSpec.describe 'As a user', type: :feature do
 
       expect(page).to have_content('Stations for 80206')
     end
+
+    it 'shows a listing of stations for a given area' do
+      visit root_path
+
+      fill_in 'q', with: '80206'
+
+      click_on 'Locate'
+
+      within '.all-stations' do
+        expect(page.all('li').count).to eq(90)
+      end
+    end
   end
 end
