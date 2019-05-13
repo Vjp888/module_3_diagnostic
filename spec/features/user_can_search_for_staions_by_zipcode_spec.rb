@@ -20,7 +20,7 @@ RSpec.describe 'As a user', type: :feature do
       click_on 'Locate'
 
       within '.all-stations' do
-        expect(page.all('li').count).to eq(90)
+        expect(page.all('li').count).to eq(93)
       end
     end
   end

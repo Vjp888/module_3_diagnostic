@@ -1,1 +1,12 @@
 <h1>Stations for <%= facade.zip_code %></h1>
+
+<p>All Stations:</p>
+<section class="all-stations">
+  <% facade.get_stations do |station| %>
+    <p><%= station.name %></p>
+    <p><%= station.address %></p>
+    <p><%= station.fuel_typs %></p>
+    <p><%= station.distance %></p>
+    <p><%= station.access_times %></p>
+  <% end %>
+</section>
